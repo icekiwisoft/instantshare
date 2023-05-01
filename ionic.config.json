@@ -1,0 +1,7 @@
+{
+  "name": "instantshare",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

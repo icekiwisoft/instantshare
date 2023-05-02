@@ -1,0 +1,1 @@
+#container{text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;position:absolute;left:0;right:0;top:50%;transform:translateY(-50%)}#container strong{font-size:25px;line-height:30px;color:var(--ion-color-primary-shade)}#container p{font-size:14px;line-height:22px;margin-top:30px;color:#ebebeb;margin:0}

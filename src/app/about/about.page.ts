@@ -5,12 +5,12 @@ import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab4',
-  templateUrl: './tab4.page.html',
-  styleUrls: ['./tab4.page.scss'],
+  templateUrl: './about.page.html',
+  styleUrls: ['./about.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class Tab4Page implements OnInit {
+export class AboutPage implements OnInit {
 
   constructor() { }
 

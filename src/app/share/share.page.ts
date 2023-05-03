@@ -4,12 +4,12 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 
 @Component({
   selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss'],
+  templateUrl: 'share.page.html',
+  styleUrls: ['share.page.scss'],
   standalone: true,
   imports: [IonicModule, ExploreContainerComponent]
 })
-export class Tab2Page {
+export class SharePage {
 
   constructor(public actionSheetController: ActionSheetController) { }
 

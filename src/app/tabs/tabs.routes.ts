@@ -12,19 +12,19 @@ export const routes: Routes = [
           import('../home/home.page').then((m) => m.HomePage),
       },
       {
-        path: 'tab2',
+        path: 'share',
         loadComponent: () =>
-          import('../share/tab2.page').then((m) => m.Tab2Page),
+          import('../share/share.page').then((m) => m.SharePage),
       },
       {
-        path: 'tab3',
+        path: 'device',
         loadComponent: () =>
-          import('../device/tab3.page').then((m) => m.Tab3Page),
+          import('../device/device.page').then((m) => m.DevicePage),
       },
       {
-        path: 'tab4',
+        path: 'about',
         loadComponent: () => 
-          import('../about/tab4.page').then( m => m.Tab4Page)
+          import('../about/about.page').then( m => m.AboutPage)
       },
       {
         path: '',
@@ -35,7 +35,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
 ];

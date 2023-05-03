@@ -4,11 +4,11 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 
 @Component({
   selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss'],
+  templateUrl: 'device.page.html',
+  styleUrls: ['devicepage.scss'],
   standalone: true,
   imports: [IonicModule, ExploreContainerComponent],
 })
-export class Tab3Page {
+export class DevicePage {
   constructor() {}
 }

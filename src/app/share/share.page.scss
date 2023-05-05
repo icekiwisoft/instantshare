@@ -1,15 +1,15 @@
 
 // -----------------------------------------------devices-----------------------------------
 
+ion-content {
 
+  --padding-top: 70px;
 
-  ion-header
+}
+
+ion-header
 {
-  padding: 10px;
-  background-color: white;
-  box-shadow: 0 0 10px #f9f9f9!important;
-  border: none;
-
+  backdrop-filter: blur(20px);
 }
 
 .container
@@ -22,8 +22,17 @@
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
+  
   color: rgb(0, 32, 211)!important;
   
+}
+
+.upd
+{
+  background: linear-gradient(90deg, rgba(121,0,142,1) 0%, rgba(0,212,255,1) 100%);
+  padding: 20px;
+  color: white;
+  margin: 10px;
 }
 ion-card
 {
@@ -33,8 +42,6 @@ ion-card
   ion-icon, ion-label,.title{
     color:rgb(0, 102, 255) ;
   } 
-
-
 
 
 #share-device-info

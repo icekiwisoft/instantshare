@@ -5,7 +5,7 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 @Component({
   selector: 'app-tab3',
   templateUrl: 'device.page.html',
-  styleUrls: ['devicepage.scss'],
+  styleUrls: ['device.page.scss'],
   standalone: true,
   imports: [IonicModule, ExploreContainerComponent],
 })

@@ -12,87 +12,24 @@
 
     <div class="container">
 
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
 
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
-
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
-
-
-        <ion-item lines="none">
-            <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>
-
-        <ion-item lines="none">
-            <ion-icon name="headset-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
-            <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
-        </ion-item>    
-
-        <ion-item lines="none">
+        <ion-item lines="none"  *ngFor="let scanResult of bluetoothScanResults">
             <ion-icon name="laptop-outline" slot="start"></ion-icon>
-            <ion-label>DEVICE</ion-label>
+            <ion-label>{{scanResult.device?.name ?? "NO name" }}</ion-label>
             <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
         </ion-item>
 
     </div>
 
-    
+
 
 
 </ion-content>
 
 <ion-item lines="none">
     <ion-card-subtitle slot="start" size="small"> APPAREILS</ion-card-subtitle>
-    
-    <ion-button slot="end" fill="clear" size="default" class="upd"> ACTUALISER </ion-button>
-  </ion-item>        
+
+    <ion-button slot="end" fill="clear" size="default"
+    (click)="scan()"
+    class="upd"> ACTUALISER </ion-button>
+  </ion-item>

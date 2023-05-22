@@ -1,3 +1,11 @@
-#bg{
+#bg {
     --background: radial-gradient(circle, rgba(63, 213, 251, 0.795) 30%, rgba(70, 88, 252, 0.747) 100%);
+}
+#bg > img{
+    width: 100%;
+}
+.home-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -3,7 +3,7 @@
     <ion-card id="share-device-info">
         <ion-item lines="none">
             <ion-label>
-            
+
                 <ion-card-title>Device Name</ion-card-title>
                 <p>{{ deviceName }}</p>
                 <ion-card-subtitle>No device connected</ion-card-subtitle>
@@ -13,14 +13,17 @@
 
     <div class="container">
 
-
         <ion-item lines="none"  *ngFor="let scanResult of bluetoothScanResults">
             <ion-icon name="laptop-outline" slot="start"></ion-icon>
             <ion-label>{{scanResult.device?.name ?? "NO name" }}</ion-label>
             <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
         </ion-item>
 
+
     </div>
+
+
+    {{s}}
 
 
 

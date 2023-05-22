@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, IonicModule } from '@ionic/angular';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
-import { BleClient, ScanResult, numberToUUID } from '@capacitor-community/bluetooth-le';
-import { Device } from "@capacitor/device";
+import { BleClient, ScanResult, numberToUUID} from '@capacitor-community/bluetooth-le';
+
 import { CommonModule } from '@angular/common';
 
 
@@ -16,7 +16,9 @@ import { CommonModule } from '@angular/common';
 
 
 export class SharePage implements OnInit {
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+readonly HEART_RATE_SERVICE = numberToUUID(0x180d);
 
   deviceName!: string;
   deviceModel!: string;
@@ -37,39 +39,44 @@ export class SharePage implements OnInit {
     scanning=false
 
   bluetoothScanResults: ScanResult[] = [];
-  readonly HEART_RATE_SERVICE = numberToUUID(0x180d);
-  readonly goProControlAndQueryServiceUUID =
-  '0000fea6-0000-1000-8000-00805f9b34fb'.toUpperCase();
 
   onBluetoothDeviceFound(result: any) {
     console.log('received new scan result', result);
     this.bluetoothScanResults.push(result);
   }
 
+  s:any
+
   async scan(): Promise<void> {
     try {
+      await BleClient.initialize()
 
+
+      await BleClient.enable()
       this.scanning = true
 
-      await BleClient.initialize();
 
       await BleClient.requestLEScan(
         {
-          services: [],
-
+          services:[this.HEART_RATE_SERVICE],
+          allowDuplicates:false
         },
+        (result) =>
+        {
+          this.s=result
 
-        this.onBluetoothDeviceFound.bind(this)
+
+  }
       );
 
       setTimeout(async () => {
         await BleClient.stopLEScan();
         this.scanning = false;
         console.log('stopped scanning');
-      }, 10000);
+      }, 20000);
     } catch (error) {
       this.scanning = true
-
+        window.alert("erreur")
       console.error(error);
 
     }

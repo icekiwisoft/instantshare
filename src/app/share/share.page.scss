@@ -1,55 +1,45 @@
 
-// -----------------------------------------------devices-----------------------------------
+// // -----------------------------------------------devices-----------------------------------
 
-ion-content {
+// ion-content {
 
-  --padding-top: 70px;
+//   --padding-top: 70px;
 
-}
-
-ion-header
-{
-  backdrop-filter: blur(20px);
-}
-
-.container
-{
-  padding: 0 10px;
-}
-.title
-{
-  padding: 10px;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  
-  color: rgb(0, 32, 211)!important;
-  
-}
-
-.upd
-{
-  background: linear-gradient(90deg, rgba(121,0,142,1) 0%, rgba(0,212,255,1) 100%);
-  padding: 20px;
-  color: white;
-  margin: 10px;
-}
-ion-card
-{
-  box-shadow: 0 0 10px #eee;
- 
-}
-  ion-icon, ion-label,.title{
-    color:rgb(0, 102, 255) ;
-  } 
+// }
 
 
-#share-device-info
-{
-  padding:20px 0;
-}
+// .container
+// {
+//   padding: 0 10px;
+// }
+// .title
+// {
+//   padding: 10px;
+//   text-align: center;
+//   font-size: 2rem;
+//   font-weight: 700;
 
-ion-item > ion-icon:nth-child(3){
-  border-left: #222428 1px solid;
-  padding-left: 1rem;
-}
+//   color: rgb(0, 32, 211)!important;
+
+// }
+
+
+// ion-card
+// {
+//   box-shadow: 0 0 10px #eee;
+
+// }
+//   ion-icon, ion-label,.title{
+//     color:rgb(0, 102, 255) ;
+//   }
+
+
+// #share-device-info
+// {
+//   padding:20px 0;
+// }
+
+// ion-item > ion-icon:nth-child(3){
+//   border-left: #222428 1px solid;
+//   padding-left: 1rem;
+// }

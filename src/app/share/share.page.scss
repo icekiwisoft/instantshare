@@ -1,11 +1,4 @@
 
-// -----------------------------------------------devices-----------------------------------
-
-ion-content {
-
-  --padding-top: 70px;
-
-}
 
 ion-header
 {
@@ -22,9 +15,9 @@ ion-header
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
-  
+
   color: rgb(0, 32, 211)!important;
-  
+
 }
 
 .upd
@@ -38,19 +31,45 @@ ion-header
 ion-card
 {
   box-shadow: 0 0 10px #eee;
- 
+
 }
   ion-icon, ion-label,.title{
     color:rgb(0, 102, 255) ;
   } 
 
 
-#share-device-info
-{
-  padding:20px 0;
-}
+// .container
+// {
+//   padding: 0 10px;
+// }
+// .title
+// {
+//   padding: 10px;
+//   text-align: center;
+//   font-size: 2rem;
+//   font-weight: 700;
 
-ion-item > ion-icon:nth-child(3){
-  border-left: #222428 1px solid;
-  padding-left: 1rem;
-}
+//   color: rgb(0, 32, 211)!important;
+
+// }
+
+
+// ion-card
+// {
+//   box-shadow: 0 0 10px #eee;
+
+// }
+//   ion-icon, ion-label,.title{
+//     color:rgb(0, 102, 255) ;
+//   }
+
+
+// #share-device-info
+// {
+//   padding:20px 0;
+// }
+
+// ion-item > ion-icon:nth-child(3){
+//   border-left: #222428 1px solid;
+//   padding-left: 1rem;
+// }

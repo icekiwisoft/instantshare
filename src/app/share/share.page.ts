@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, IonicModule } from '@ionic/angular';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { BleClient, ScanResult, numberToUUID } from '@capacitor-community/bluetooth-le';
@@ -14,7 +14,9 @@ import { CommonModule } from '@angular/common';
   imports: [IonicModule, ExploreContainerComponent, CommonModule]
 })
 
-export class SharePage {
+
+export class SharePage implements OnInit {
+  ngOnInit(): void {}
 
   deviceName!: string;
   deviceModel!: string;
@@ -32,72 +34,48 @@ export class SharePage {
   serialNumber!: string;
 
   constructor(public actionSheetController: ActionSheetController) { }
-
+    scanning=false
 
   bluetoothScanResults: ScanResult[] = [];
   readonly HEART_RATE_SERVICE = numberToUUID(0x180d);
+  readonly goProControlAndQueryServiceUUID =
+  '0000fea6-0000-1000-8000-00805f9b34fb'.toUpperCase();
 
   onBluetoothDeviceFound(result: any) {
     console.log('received new scan result', result);
     this.bluetoothScanResults.push(result);
   }
 
-
-  async ionViewDidEnter() {
-    // Récupérer les informations sur le telephone
-    try {
-      const info = await Device.getInfo();
-      this.deviceName = info.name || 'Unknown';
-      this.deviceModel = info.model;
-      this.osVersion = `${info.platform} ${info.osVersion}`;
-      this.platform = info.platform;
-      this.manufacturer = info.manufacturer;
-      this.language = navigator.language;
-      if (info.memUsed !== undefined) {
-        this.memUsed = info.memUsed / 1048576;
-      }
-
-      if (info.realDiskFree !== undefined) {
-        this.realDiskFree = info.realDiskFree / 1073741824;
-      }
-      if (info.realDiskTotal !== undefined) {
-        this.realDiskTotal = info.realDiskTotal / 1073741824;
-      }
-
-      this.memoireOC = this.realDiskTotal - this.realDiskFree;
-
-    } catch (err) {
-      console.error('Erreur lors de la récupération des informations sur le dispositif :', JSON.stringify(err));
-    }
-
-  }
-
-
-
   async scan(): Promise<void> {
-
-
     try {
+
+      this.scanning = true
+
       await BleClient.initialize();
 
       await BleClient.requestLEScan(
         {
-          services: [this.HEART_RATE_SERVICE],
+          services: [],
 
         },
-        (result) => {
-          this.onBluetoothDeviceFound.bind(result)
-        }
+
+        this.onBluetoothDeviceFound.bind(this)
       );
 
       setTimeout(async () => {
         await BleClient.stopLEScan();
+        this.scanning = false;
         console.log('stopped scanning');
-      }, 5000);
+      }, 10000);
     } catch (error) {
+      this.scanning = true
+
       console.error(error);
+
     }
   }
+
+
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
@@ -124,8 +102,6 @@ export class SharePage {
     const { role } = await actionSheet.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
   }
-
-
 
 
 }

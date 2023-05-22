@@ -3,6 +3,7 @@
     <ion-card id="share-device-info">
         <ion-item lines="none">
             <ion-label>
+              bonjour
                 <ion-card-title>Device Name</ion-card-title>
                 <p>TECNO SPARK 10</p>
                 <ion-card-subtitle>No device connected</ion-card-subtitle>
@@ -31,5 +32,5 @@
 
     <ion-button slot="end" fill="clear" size="default"
     (click)="scan()"
-    class="upd"> ACTUALISER </ion-button>
+    class="upd"> <ion-label *ngIf="scanning === false">ACTUALISER</ion-label> <ion-spinner *ngIf="scanning === true"/> </ion-button>
   </ion-item>

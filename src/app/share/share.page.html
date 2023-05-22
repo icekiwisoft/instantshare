@@ -1,5 +1,12 @@
+<ion-header>
+    <ion-item>
+        <ion-toggle justify="space-between" class="ion-padding">
+            <ion-title>Instantshare</ion-title>
+        </ion-toggle>
+    </ion-item>
+</ion-header>
 
-<ion-content [fullscreen]="true"  padding="true" class="padding">
+<ion-content [fullscreen]="true" padding="true" class="padding">
     <ion-card id="share-device-info">
         <ion-item lines="none">
             <ion-label>
@@ -13,7 +20,7 @@
     <div class="container">
 
 
-        <ion-item lines="none"  *ngFor="let scanResult of bluetoothScanResults">
+        <ion-item lines="none" *ngFor="let scanResult of bluetoothScanResults">
             <ion-icon name="laptop-outline" slot="start"></ion-icon>
             <ion-label>{{scanResult.device?.name ?? "NO name" }}</ion-label>
             <ion-icon (click)="presentActionSheet()" slot="end" name="ellipsis-vertical-circle-outline"></ion-icon>
@@ -29,7 +36,5 @@
 <ion-item lines="none">
     <ion-card-subtitle slot="start" size="small"> APPAREILS</ion-card-subtitle>
 
-    <ion-button slot="end" fill="clear" size="default"
-    (click)="scan()"
-    class="upd"> ACTUALISER </ion-button>
-  </ion-item>
+    <ion-button slot="end" fill="clear" size="default" (click)="scan()" class="upd"> ACTUALISER </ion-button>
+</ion-item>

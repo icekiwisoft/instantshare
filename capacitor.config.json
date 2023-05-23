@@ -1,1 +1,10 @@
-{}
+{
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false,
+      "androidScaleType": "CENTER_CROP",
+      "splashImmersive": true,
+      "backgroundColor": "#00405b"
+    }
+  }
+}

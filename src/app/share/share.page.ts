@@ -16,9 +16,14 @@ import { CommonModule } from '@angular/common';
 
 
 export class SharePage implements OnInit {
+  bstate!:boolean
   ngOnInit(): void {
+    BleClient.initialize().then(async () =>
+    {
+      this.bstate=await BleClient.isEnabled()
+     })
+
   }
-readonly HEART_RATE_SERVICE = numberToUUID(0x180d);
 
   deviceName!: string;
   deviceModel!: string;
@@ -41,24 +46,28 @@ readonly HEART_RATE_SERVICE = numberToUUID(0x180d);
   bluetoothScanResults: ScanResult[] = [];
 
   onBluetoothDeviceFound(result: any) {
-    console.log('received new scan result', result);
     this.bluetoothScanResults.push(result);
   }
 
   s:any
+  async tb()
+  {
+    (await BleClient.isEnabled()) ?BleClient.disable()  : BleClient.enable()
 
+    this.bstate=await BleClient.isEnabled()
+  }
   async scan(): Promise<void> {
     try {
-      await BleClient.initialize()
 
+
+      this.scanning = true
 
       await BleClient.enable()
-      this.scanning = true
 
 
       await BleClient.requestLEScan(
         {
-          services:[this.HEART_RATE_SERVICE],
+          services:[],
           allowDuplicates:false
         },
         (result) =>

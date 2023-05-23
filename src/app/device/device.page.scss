@@ -10,3 +10,33 @@
     justify-content: space-between;
     align-items: center;
 }
+.device_info-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.device_info-info2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.device_info-info3 {
+    width: 100%;
+}
+.device_info-info:nth-child(1){
+    padding-left: 2px solid #ffff;
+    padding: 10px;
+}
+
+
+ion-card {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+
+ion-content ion-card {
+    width: 100%;
+}
